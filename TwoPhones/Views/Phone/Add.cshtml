@@ -1,0 +1,47 @@
+﻿@model TwoPhones.Models.ViewModels.PhoneViewModel
+@{
+    ViewBag.Title = "Add Phone";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+    <div class="col-lg-12">
+        @using (Html.BeginForm("Add", "Phone", FormMethod.Post, new { role = "form", @class = "" }))
+        {
+
+            // Cuando hay un error en el formulario, se muestra este mensaje
+            @Html.ValidationMessage("error", new { @class = "text-danger" })
+
+            <br />
+
+            @Html.LabelFor(alias => alias.Number)
+            @Html.TextBoxFor(alias => alias.Number, new { @class = "form-control" })
+            @Html.ValidationMessage("Number", new { @class = "text-danger" })
+
+            <br />
+
+            @Html.LabelFor(alias => alias.Balance)
+            @Html.TextBoxFor(alias => alias.Balance, new { @class = "form-control" })
+            @Html.ValidationMessage("Balance", new { @class = "text-danger" })
+
+            <br />
+
+            @Html.LabelFor(alias => alias.Status)
+            @Html.TextBoxFor(alias => alias.Status, new { @class = "form-control" })
+            @Html.ValidationMessage("Status", new { @class = "text-danger" })
+
+            <br />
+
+            @Html.LabelFor(alias => alias.IsPublic)
+            @Html.TextBoxFor(alias => alias.IsPublic, new { @class = "form-control" })
+            @Html.ValidationMessage("IsPublic", new { @class = "text-danger" })
+
+            <br />
+
+            <input type="submit" class="btn btn-block btn-success mt-3 savePhone" value="Save Phone" />
+        }
+    </div>
+</div>
+
+

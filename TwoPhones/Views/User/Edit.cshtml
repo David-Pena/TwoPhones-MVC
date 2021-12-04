@@ -1,0 +1,93 @@
+﻿@model TwoPhones.Models.ViewModels.EditUserViewModel
+@{
+    ViewBag.Title = "Edit User";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+    <div class="col-lg-12">
+        @using (Html.BeginForm("Edit", "User", FormMethod.Post, new { role = "form", @class = "" }))
+        {
+            // Helper para no recibir peticiones de afuera
+            @*@Html.AntiForgeryToken()*@
+
+            // Esconder Id
+            @Html.HiddenFor(alias => alias.Id)
+
+            // Cuando hay un error en el formulario, se muestra este mensaje
+            @Html.ValidationMessage("error", new { @class = "text-danger" })
+
+            // Muestra el label que colocamos con DataAnnotations en el UserViewModel
+            @Html.LabelFor(alias => alias.Email)
+            @Html.TextBoxFor(alias => alias.Email, new { @class = "form-control" })
+            @Html.ValidationMessage("Email", new { @class = "text-danger" })
+
+            <br />
+
+            @Html.LabelFor(alias => alias.Password)
+            @Html.PasswordFor(alias => alias.Password, new { @class = "form-control" })
+            @Html.ValidationMessage("Password", new { @class = "text-danger" })
+
+            <br />
+
+            @Html.LabelFor(alias => alias.ConfirmPassword)
+            @Html.PasswordFor(alias => alias.ConfirmPassword, new { @class = "form-control" })
+            @Html.ValidationMessage("ConfirmPassword", new { @class = "text-danger" })
+
+            <br />
+
+            @Html.LabelFor(alias => alias.Name)
+            @Html.TextBoxFor(alias => alias.Name, new { @class = "form-control" })
+            @Html.ValidationMessage("Name", new { @class = "text-danger" })
+
+            <br />
+
+            @Html.LabelFor(alias => alias.LastName)
+            @Html.TextBoxFor(alias => alias.LastName, new { @class = "form-control" })
+            @Html.ValidationMessage("LastName", new { @class = "text-danger" })
+
+            <br />
+
+            @Html.LabelFor(alias => alias.Address)
+            @Html.TextBoxFor(alias => alias.Address, new { @class = "form-control" })
+            @Html.ValidationMessage("Address", new { @class = "text-danger" })
+
+            <br />
+
+            @Html.LabelFor(alias => alias.AccountNumber)
+            @Html.TextBoxFor(alias => alias.AccountNumber, new { @class = "form-control" })
+            @Html.ValidationMessage("AccountNumber", new { @class = "text-danger" })
+
+            <br />
+
+            @Html.LabelFor(alias => alias.ExpirationDate)
+            @Html.TextBoxFor(alias => alias.ExpirationDate, new { @class = "form-control" })
+            @Html.ValidationMessage("ExpirationDate", new { @class = "text-danger" })
+
+            <br />
+
+            @Html.LabelFor(alias => alias.CVV)
+            @Html.TextBoxFor(alias => alias.CVV, new { @class = "form-control" })
+            @Html.ValidationMessage("CVV", new { @class = "text-danger" })
+
+            <br />
+
+            @Html.LabelFor(alias => alias.Identification)
+            @Html.TextBoxFor(alias => alias.Identification, new { @class = "form-control" })
+            @Html.ValidationMessage("Identification", new { @class = "text-danger" })
+
+            <br />
+
+            @Html.LabelFor(alias => alias.Role)
+            @Html.TextBoxFor(alias => alias.Role, new { @class = "form-control" })
+            @Html.ValidationMessage("Role", new { @class = "text-danger" })
+
+            <br />
+
+            <input type="submit" class="btn btn-block btn-success saveUser" value="Save User" />
+        }
+    </div>
+</div>
+
+

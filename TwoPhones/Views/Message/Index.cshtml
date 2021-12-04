@@ -1,0 +1,36 @@
+﻿@model List<TwoPhones.Models.TableViewModels.MessageTableViewModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Messages</h2>
+
+<div class="row">
+    <div class="col-lg-12">
+        <input type="button" class="btn btn-success addMessage" value="Send a New Message" onclick="document.location.href='@Url.Content("~/Message/Add")'" />
+    </div>
+    <div class="col-lg-12">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>No Sender</th>
+                    <th>No Receiver</th>
+                    <th>Content</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var El in Model)
+                {
+                    <tr>
+                        <td>@El.Id</td>
+                        <td>@El.From</td>
+                        <td>@El.To</td>
+                        <td>@El.Message</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

@@ -1,0 +1,30 @@
+﻿body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+h2 {
+    text-align: center;
+}
+
+label.label1 {
+    margin-top: 25px;
+}
+
+label {
+    margin-top: 10px;
+}
+
+.login, .addUser {
+    margin-top: 15px;
+}
+
+.addUser, .addPhone, .addMessage {
+    margin-bottom: 15px;
+}
+
+.saveUser, .savePhone, .sendMessage {
+    margin-top: 15px;
+}
